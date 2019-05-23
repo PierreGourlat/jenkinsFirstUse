@@ -1,13 +1,11 @@
 pipeline {
     agent {
-        docker {
-            image 'maven:3-alpine'
+        docker { image 'node:7-alpine' }
     }
-	}
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'echo "hahahaha it worked"'
+                sh 'node --version'
             }
         }
     }
