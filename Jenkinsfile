@@ -4,8 +4,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
-		sh 'cd WatchDir'
-		sh 'mvn package'
             }
         }
     }
