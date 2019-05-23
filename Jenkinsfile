@@ -9,6 +9,7 @@ agent {
             steps {
 		sh 'mvn --version'
 		sh 'cd WatchDir'
+		sh 'ls'
 		sh 'mvn package'
 		sh 'ls target/'
                 sh 'echo HAHAHAHA'
