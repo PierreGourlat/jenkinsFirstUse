@@ -7,12 +7,12 @@ agent {
     stages {
         stage('Test') {
             steps {
-		sh 'mvn --version'
-		sh 'cd WatchDir'
-		sh 'ls'
-		sh 'mvn package'
-		sh 'ls target/'
-                sh 'echo HAHAHAHA'
+		dir (WatchDir){
+			sh 'mvn --version'
+			sh 'mvn package'
+			sh 'ls target/'
+			sh 'echo HAHAHAHA'
+		}
             }
         }
     }
