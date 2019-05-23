@@ -1,18 +1,19 @@
 pipeline {
-agent {
-    docker {
-        image 'maven:3-alpine'
+    agent {
+        docker {
+            image 'maven:3-alpine'
+        }
     }
-}
     stages {
-        stage('Test') {
+        stage('DataCollector') {
             steps {
-		dir (WatchDir){
-			sh 'mvn --version'
-			sh 'mvn package'
-			sh 'ls target/'
-			sh 'echo HAHAHAHA'
-		}
+                dir("WatchDir") {
+                    sh 'mvn --version'
+                    sh 'mvn package'
+                    sh 'ls target/'
+                    sh 'echo HAHAHA'
+                }
+            
             }
         }
     }
