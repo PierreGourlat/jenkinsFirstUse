@@ -1,0 +1,19 @@
+<configuration>
+  <appender name="cloud-watch" class="io.github.dibog.AwsLogAppender">
+    <createLogGroup>true</createLogGroup>
+    <groupName>mmh-datacollector-group</groupName>
+    <streamName>mmh-datacollector-stream</streamName>
+    <dateFormat>dd.MM.yyyy</dateFormat>
+     <layout>
+        <pattern>%-5level [%thread] %logger{35} - %msg %n</pattern>
+     </layout>
+  </appender>
+  <root level="error">
+    <appender-ref ref="cloud-watch"/>
+  </root>
+  <root level="info">
+    <appender-ref ref="cloud-watch"/>
+  </root>
+</configuration>
+
+
